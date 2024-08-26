@@ -63,15 +63,24 @@ fi
 # Rename folders with spaces to underscores
 # only if there are spaces in the folder names
 # check if any folder inside the current directory have spaces then rename them if they do
-echo "Checking for folders with spaces in the name and replacing spaces with _ ..."
-sleep 2
-for folder in *; do
-    if [ -d "$folder" ] && [[ "$folder" == *" "* ]]; then
-        new_folder=$(echo "$folder" | tr ' ' '_')
-        mv "$folder" "$new_folder"
-        echo "Renamed: $folder -> $new_folder"
-    fi
+echo "Checking for folders with spaces in the name, replacing spaces with underscores, and removing any commas..."
+
+# Loop through all directories in the current directory
+for folder in */; do
+  # Remove the trailing slash from the folder name
+  folder_name="${folder%/}"
+
+  # Check if the folder name contains spaces or commas
+  if [[ "$folder_name" =~ [[:space:]] || "$folder_name" =~ [,] ]]; then
+    # Create a new folder name by replacing spaces with underscores and removing commas
+    new_folder_name=$(echo "$folder_name" | tr ' ' '_' | tr -d ',')
+    mv "$folder_name" "$new_folder_name"
+
+    echo "Renamed '$folder_name' to '$new_folder_name'"
+  fi
 done
+
+echo "Folder renaming process completed."
 
 
 # check if the folders are present in the same directory as the script

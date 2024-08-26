@@ -1,6 +1,8 @@
 # word-document-parser
 This is a system designed to extract the career data from a set of files in a specific group of folders
 
+[Google Drive Containing the video: How to use Word Document Parser](https://drive.google.com/drive/folders/19KgD7RcTyoxqcowNCyk70GsX_SonMtjU?usp=sharing)
+
 ## Running the program
 
 **Make sure you have the following files in the same directory as the folders with the word documents**

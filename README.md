@@ -5,7 +5,7 @@ This is a system designed to extract the career data from a set of files in a sp
 
 ## Running the program
 
-**Make sure you have the following files in the same directory as the folders with the word documents**
+**Make sure you have the following folders in the same directory as the program files**
 
 *The progam will look for these folder*:
 ("FENG" "FFA" "FHE" "FMS" "FSS LAW & SPORT" "FST")

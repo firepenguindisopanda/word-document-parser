@@ -140,3 +140,15 @@ Any deviation from this or if there is content that follows the same pattern, th
 ### Temporary Fix:
 
 Converted the text to normal English text, e.g., "sauté" is turned to "saute".
+
+---
+
+# Modularized Tool
+
+extract_data_tool/
+- tool/
+  - __init__.py
+  - cli.py
+  - utils.py
+  - validators.py
+  - executor.py

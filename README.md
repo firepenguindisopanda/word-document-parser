@@ -20,11 +20,28 @@ The program will generate files as follows:
 
 ## Steps to run the program
 
-- `pip install -r requirements.txt`
-- Ensure the `check_doc_extensions.sh` is executable by using this command -> `chmod +x check_doc_extensions.sh`
-- Ensure the `extract_career_data.sh` is executable by using this command -> `chmod +x extract_career_data.sh`
-- Make sure the folders are available and that the word document files are not open
-- Execute the shell script with this command `./extract_career_data.sh`
+This project uses `uv` for lightning-fast dependency management and cross-platform compatibility.
+
+1.  **Install dependencies**:
+    ```bash
+    uv sync
+    ```
+2.  **Execute the parser**:
+    ```bash
+    uv run python -m extract_data_tool.tool.cli --execute
+    ```
+    This command will:
+    - Load configuration from `config.yaml`.
+    - Rename folders/files with spaces to underscores.
+    - Generate `valid_docx_paths.txt`.
+    - Extract data to `extracted_careers_data.json`.
+    - Generate summary statistics.
+
+3.  **Merge documents (Optional)**:
+    If you want to create a single merged Word document:
+    ```bash
+    uv run python -m extract_data_tool.tool.cli --merge
+    ```
 
 # Extracting Career Data From 77 Word Documents
 
